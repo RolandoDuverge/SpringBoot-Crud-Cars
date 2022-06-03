@@ -22,4 +22,19 @@ public class CarrosServicioImpl implements CarrosServicio{
     public Carros guardarCarro(Carros Carro) {
         return repositorio.save(Carro);
     }
+
+    @Override
+    public Carros obtenerCarroId(Long id) {
+        return repositorio.findById(id).get();
+    }
+
+    @Override
+    public Carros actualizarCarro(Carros Carro) {
+        return repositorio.save(Carro);
+    }
+
+    @Override
+    public void eliminarCarro(Long id) {
+        repositorio.deleteById(id);
+    }
 }

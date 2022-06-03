@@ -36,5 +36,32 @@ public class CarrosControlador {
             servicio.guardarCarro(Carro);
             return "redirect:/carros";
         }
+        @GetMapping("/carros/editar/{id}")
+        public String mostrarFormularioDeEditar(@PathVariable Long id, Model modelo) {
+            modelo.addAttribute("carro", servicio.obtenerCarroId(id));
+            return "editar_carro";
+        }
+
+        @PostMapping("/carros/{id}")
+        public String actualizarCarro(@PathVariable Long id, @ModelAttribute("carro") Carros Carro,Model modelo) {
+            Carros carrosExistente = servicio.obtenerCarroId(id);
+            carrosExistente.setId(id);
+            carrosExistente.setModelo(Carro.getModelo());
+            carrosExistente.setMarca(Carro.getMarca());
+            carrosExistente.setDescripcion(Carro.getDescripcion());
+            carrosExistente.setNumero_de_Chasis(Carro.getNumero_de_Chasis());
+            carrosExistente.setNumero_de_Placa(Carro.getNumero_de_Placa());
+            carrosExistente.setTipo_Combustible(Carro.getTipo_Combustible());
+            carrosExistente.setTipo_de_vehiculo(Carro.getTipo_de_vehiculo());
+
+            servicio.actualizarCarro(carrosExistente);
+            return "redirect:/carros";
+        }
+
+        @GetMapping("/carros/{id}")
+        public String eliminarCarro(@PathVariable Long id) {
+            servicio.eliminarCarro(id);
+            return "redirect:/carros";
+        }
 }
 

@@ -8,4 +8,11 @@ public interface CarrosServicio {
     public List<Carros> listarTodosLosCarros();
 
     public Carros guardarCarro(Carros Carro);
+
+    public Carros obtenerCarroId(Long id);
+
+    public Carros actualizarCarro(Carros Carro);
+
+    public void eliminarCarro(Long id);
+
 }

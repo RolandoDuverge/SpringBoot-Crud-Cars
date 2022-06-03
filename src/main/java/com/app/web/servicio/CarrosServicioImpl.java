@@ -17,4 +17,9 @@ public class CarrosServicioImpl implements CarrosServicio{
     public List<Carros> listarTodosLosCarros() {
         return repositorio.findAll();
     }
+
+    @Override
+    public Carros guardarCarro(Carros Carro) {
+        return repositorio.save(Carro);
+    }
 }

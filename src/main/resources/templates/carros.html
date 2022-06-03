@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-lg-3">
-            <a th:href="@{/carro/nuevo}" class="btn btn-primary btn-sm mb3">Agregar estudiante</a>
+            <a th:href="@{/carros/nuevo}" class="btn btn-primary btn-sm mb3">Agregar estudiante</a>
         </div>
     </div>
     <br>
@@ -48,11 +48,11 @@
         <tr th:each="carro : ${carros}">
             <td th:text="${carro.modelo}">Modelo</td>
             <td th:text="${carro.marca}">Marca</td>
-            <td th:text="${carro.descripcion}">Descripcion</td>
+            <td th:text="${carro.descripcion}">Descripción</td>
             <td th:text="${carro.tipo_Combustible}">Tipo de combustible</td>
-            <td th:text="${carro.numero_de_Chasis}">Numero de chasis</td>
-            <td th:text="${carro.numero_de_Placa}">Numero de placa</td>
-            <td th:text="${carro.tipo_de_vehiculo}">Tipo de vehiculo</td>
+            <td th:text="${carro.numero_de_Chasis}">Número de chasis</td>
+            <td th:text="${carro.numero_de_Placa}">Número de placa</td>
+            <td th:text="${carro.tipo_de_vehiculo}">Tipo de vehículo</td>
             <td>
                 <a th:href="@{/carros/editar/{id}(id=${carro.id})}" class="btn btn-info">Editar</a>
                 <a th:href="@{/carros/{id}(id=${carro.id})}" class="btn btn-danger">Eliminar</a>

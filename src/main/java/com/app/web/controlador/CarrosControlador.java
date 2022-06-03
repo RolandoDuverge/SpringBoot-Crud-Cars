@@ -25,11 +25,16 @@ public class CarrosControlador {
             return "carros";
         }
 
-    @GetMapping("/carros/nuevo")
-    public String RegistrarCarro(Model modelo) {
-        Carros Carros = new Carros();
-        modelo.addAttribute("Carros", Carros);
-        return "crear_estudiante";
-    }
-    }
+        @GetMapping("/carros/nuevo")
+        public String registrarCarro(Model modelo) {
+            Carros carro = new Carros();
+            modelo.addAttribute("carro", carro);
+            return "crear_carro";
+        }
+        @PostMapping("/carros")
+        public String guardarCarro(@ModelAttribute("Carro") Carros Carro) {
+            servicio.guardarCarro(Carro);
+            return "redirect:/carros";
+        }
+}
 

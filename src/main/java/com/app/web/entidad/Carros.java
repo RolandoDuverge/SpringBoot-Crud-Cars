@@ -4,10 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "cars")
+
 public class Carros {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "Marca",nullable = false,length = 50)
     private String Marca;
@@ -15,29 +17,33 @@ public class Carros {
     @Column(name = "Modelo",nullable = false,length = 50)
     private String Modelo;
 
-    @Column(name = "Descripcion",nullable = false,length = 50)
+    @Column(name = "Descripcion",nullable = false,length = 50,unique = true)
     private String Descripcion;
 
-    @Column(name = "Tipo combustible",nullable = false,length = 50)
+    @Column(name = "Tipo_Combustible",nullable = false,length = 50)
     private String Tipo_Combustible;
 
-    @Column(name = "Año de fabricacion",nullable = false,length = 50)
+    @Column(name = "Año_de_Fabricacion",nullable = false,length = 50)
     private String Año_de_Fabricacion;
 
-    @Column(name = "Numero de chasis",nullable = false,length = 50,unique = true)
+    @Column(name = "Numero_de_Chasis",nullable = false,length = 50,unique = true)
     private String Numero_de_Chasis;
 
-    @Column(name = "Numero de placa",nullable = false,length = 50,unique = true)
+    @Column(name = "Numero_de_Placa",nullable = false,length = 50,unique = true)
     private String Numero_de_Placa;
 
-    @Column(name = "Tipo de vehiculo",nullable = false,length = 50)
+    @Column(name = "Tipo_de_vehiculo",nullable = false,length = 50)
     private String Tipo_de_vehiculo;
+    public Carros() {
 
-    public Carros(String marca, String modelo, String descripcion, String tipo_Combustible, String año_de_Fabricacion, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
+    }
 
-        Marca = marca;
-        Modelo = modelo;
-        Descripcion = descripcion;
+    public Carros(Long id, String Marca, String Modelo, String Descripcion, String tipo_Combustible, String año_de_Fabricacion, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
+        super();
+        this.id = id;
+        this.Marca = Marca;
+        this.Modelo = Modelo;
+        this.Descripcion = Descripcion;
         Tipo_Combustible = tipo_Combustible;
         Año_de_Fabricacion = año_de_Fabricacion;
         Numero_de_Chasis = numero_de_Chasis;
@@ -45,11 +51,23 @@ public class Carros {
         Tipo_de_vehiculo = tipo_de_vehiculo;
     }
 
-    public long getId() {
+    public Carros( String Marca, String Modelo, String Descripcion, String tipo_Combustible, String año_de_Fabricacion, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
+        super();
+        this.Marca = Marca;
+        this.Modelo = Modelo;
+        this.Descripcion = Descripcion;
+        Tipo_Combustible = tipo_Combustible;
+        Año_de_Fabricacion = año_de_Fabricacion;
+        Numero_de_Chasis = numero_de_Chasis;
+        Numero_de_Placa = numero_de_Placa;
+        Tipo_de_vehiculo = tipo_de_vehiculo;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,25 +75,26 @@ public class Carros {
         return Marca;
     }
 
-    public void setMarca(String marca) {
-        Marca = marca;
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
     }
 
     public String getModelo() {
         return Modelo;
     }
 
-    public void setModelo(String modelo) {
-        Modelo = modelo;
+    public void setModelo(String Modelo) {
+        this.Modelo = Modelo;
     }
 
     public String getDescripcion() {
         return Descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
     }
+
 
     public String getTipo_Combustible() {
         return Tipo_Combustible;
@@ -116,19 +135,10 @@ public class Carros {
     public void setTipo_de_vehiculo(String tipo_de_vehiculo) {
         Tipo_de_vehiculo = tipo_de_vehiculo;
     }
-
     @Override
     public String toString() {
-        return "Carros{" +
-                "id=" + id +
-                ", Marca='" + Marca + '\'' +
-                ", Modelo='" + Modelo + '\'' +
-                ", Descripcion='" + Descripcion + '\'' +
-                ", Tipo_Combustible='" + Tipo_Combustible + '\'' +
-                ", Año_de_Fabricacion='" + Año_de_Fabricacion + '\'' +
-                ", Numero_de_Chasis='" + Numero_de_Chasis + '\'' +
-                ", Numero_de_Placa='" + Numero_de_Placa + '\'' +
-                ", Tipo_de_vehiculo='" + Tipo_de_vehiculo + '\'' +
-                '}';
+        return "Carros [id=" + id + ", Marca=" + Marca + ", Modelo=" + Modelo + ", Descripcion=" + Descripcion + ", Tipo_Combustible=" + Tipo_Combustible + ", Año_de_Fabricacion=" + Año_de_Fabricacion + ", Numero_de_Chasis=" + Numero_de_Chasis + ", Numero_de_Placa=" + Numero_de_Placa + ", Tipo_de_vehiculo=" + Tipo_de_vehiculo + "]";
     }
+
+
 }

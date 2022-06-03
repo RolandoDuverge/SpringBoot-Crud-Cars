@@ -19,10 +19,8 @@ public class  CrudSpringBootApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-      //  Carros Carros1 = new Carros("Kia", "Picanto", "Nuevo", "Gasolina", "2020", "A213213213", "2321323", "Sport");
-       // repositorio.save(Carros1);
+        //Carros Carros1 = new Carros("Kia", "Picanto", "Nuevo", "Gasolina", "2020", "A213213213", "2321323", "Sport");
+        //repositorio.save(Carros1);
 
-      //  Carros Carros2 = new Carros("Toyota", "Corolla", "Nuevo", "Gasolina", "2020", "A2132213213", "23212323", "Sport");
-        //repositorio.save(Carros2);
     }
 }

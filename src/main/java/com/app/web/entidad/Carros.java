@@ -23,9 +23,6 @@ public class Carros {
     @Column(name = "Tipo_Combustible",nullable = false,length = 50)
     private String Tipo_Combustible;
 
-    @Column(name = "Año_de_Fabricacion",nullable = false,length = 50)
-    private String Año_de_Fabricacion;
-
     @Column(name = "Numero_de_Chasis",nullable = false,length = 50,unique = true)
     private String Numero_de_Chasis;
 
@@ -38,26 +35,24 @@ public class Carros {
 
     }
 
-    public Carros(Long id, String Marca, String Modelo, String Descripcion, String tipo_Combustible, String año_de_Fabricacion, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
+    public Carros(Long id, String Marca, String Modelo, String Descripcion, String tipo_Combustible, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
         super();
         this.id = id;
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.Descripcion = Descripcion;
         Tipo_Combustible = tipo_Combustible;
-        Año_de_Fabricacion = año_de_Fabricacion;
         Numero_de_Chasis = numero_de_Chasis;
         Numero_de_Placa = numero_de_Placa;
         Tipo_de_vehiculo = tipo_de_vehiculo;
     }
 
-    public Carros( String Marca, String Modelo, String Descripcion, String tipo_Combustible, String año_de_Fabricacion, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
+    public Carros( String Marca, String Modelo, String Descripcion, String tipo_Combustible, String numero_de_Chasis, String numero_de_Placa, String tipo_de_vehiculo) {
         super();
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.Descripcion = Descripcion;
         Tipo_Combustible = tipo_Combustible;
-        Año_de_Fabricacion = año_de_Fabricacion;
         Numero_de_Chasis = numero_de_Chasis;
         Numero_de_Placa = numero_de_Placa;
         Tipo_de_vehiculo = tipo_de_vehiculo;
@@ -104,14 +99,6 @@ public class Carros {
         Tipo_Combustible = tipo_Combustible;
     }
 
-    public String getAño_de_Fabricacion() {
-        return Año_de_Fabricacion;
-    }
-
-    public void setAño_de_Fabricacion(String año_de_Fabricacion) {
-        Año_de_Fabricacion = año_de_Fabricacion;
-    }
-
     public String getNumero_de_Chasis() {
         return Numero_de_Chasis;
     }
@@ -137,7 +124,7 @@ public class Carros {
     }
     @Override
     public String toString() {
-        return "Carros [id=" + id + ", Marca=" + Marca + ", Modelo=" + Modelo + ", Descripcion=" + Descripcion + ", Tipo_Combustible=" + Tipo_Combustible + ", Año_de_Fabricacion=" + Año_de_Fabricacion + ", Numero_de_Chasis=" + Numero_de_Chasis + ", Numero_de_Placa=" + Numero_de_Placa + ", Tipo_de_vehiculo=" + Tipo_de_vehiculo + "]";
+        return "Carros [id=" + id + ", Marca=" + Marca + ", Modelo=" + Modelo + ", Descripcion=" + Descripcion + ", Tipo_Combustible=" + Tipo_Combustible + ", Numero_de_Chasis=" + Numero_de_Chasis + ", Numero_de_Placa=" + Numero_de_Placa + ", Tipo_de_vehiculo=" + Tipo_de_vehiculo + "]";
     }
 
 

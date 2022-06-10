@@ -5,7 +5,7 @@ import com.app.web.entidad.Carros;
 
 public interface CarrosServicio {
 
-    public List<Carros> listarTodosLosCarros();
+    public List<Carros> listarTodosLosCarros(String palabraClave);
 
     public Carros guardarCarro(Carros Carro);
 

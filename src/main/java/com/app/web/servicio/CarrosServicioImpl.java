@@ -4,6 +4,7 @@ import com.app.web.entidad.Carros;
 import com.app.web.repositorio.CarrosRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -13,8 +14,11 @@ public class CarrosServicioImpl implements CarrosServicio{
     @Autowired
     private CarrosRepositorio repositorio;
 
-    @Override
-    public List<Carros> listarTodosLosCarros() {
+    @RequestMapping
+    public List<Carros> listarTodosLosCarros(String palabraClave) {
+        if(palabraClave != null){
+            return repositorio.findAll(palabraClave);
+        }
         return repositorio.findAll();
     }
 
@@ -37,4 +41,5 @@ public class CarrosServicioImpl implements CarrosServicio{
     public void eliminarCarro(Long id) {
         repositorio.deleteById(id);
     }
+
 }
